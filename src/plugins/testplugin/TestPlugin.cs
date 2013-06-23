@@ -13,50 +13,6 @@ namespace TS3Query.Plugins
     {
         string CurrentSCHandlerID = string.Empty;
 
-        public override void Initialize()
-        {
-            // This code will register the "notifytextmessage" event for us so we
-            // can receive messages through the query.
-            // It doesn't matter if you call it again afterwards, it should just
-            // sync properly.
-            Client.QueryResponseReceived += (s, e) =>
-            {
-                switch (e.Response.Name.ToLower())
-                {
-                    case "selected":
-                        CurrentSCHandlerID = e.Response.Parameters["schandlerid"];
-                        Client.Send(
-                            new TS3QueryRequest(
-                                "clientnotifyregister",
-                                new Dictionary<string, string>
-                                {
-                                    { "schandlerid", CurrentSCHandlerID },
-                                    { "event", "notifytextmessage" }
-                                }
-                            )
-                        );
-                        break;
-                    default:
-                        // Returned via "currentschandlerid" command
-                        if (e.Response.Name.StartsWith("schandlerid="))
-                        {
-                            CurrentSCHandlerID = e.Response.Name.Split('=').Last();
-                            Client.Send(
-                                new TS3QueryRequest(
-                                    "clientnotifyregister",
-                                    new Dictionary<string, string>
-                                    {
-                                        { "schandlerid", CurrentSCHandlerID },
-                                        { "event", "notifytextmessage" }
-                                    }
-                                )
-                            );
-                        }
-                        break;
-                }
-            };
-        }
-
         [PluginCommand("test", Description = "Simply does some test output.", TargetMode = TS3MessageTargetMode.Channel)]
         public void Channel_Test(
             TS3QueryResponse response)
