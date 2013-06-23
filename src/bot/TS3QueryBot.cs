@@ -61,6 +61,9 @@ namespace TS3Query
             // Add current path for plugins
             pCatalog.Catalogs.Add(new DirectoryCatalog(Environment.CurrentDirectory));
 
+            // The bot assembly itself
+            pCatalog.Catalogs.Add(new AssemblyCatalog(Assembly.GetExecutingAssembly()));
+
             // Add assembly path for plugins (if not equal to Environment.CurrentDirectory)
             var dc = Path.GetFullPath(Path.GetDirectoryName(Assembly.GetAssembly(GetType()).Location));
             if (dc.TrimEnd(Path.DirectorySeparatorChar) != Path.GetFullPath(Environment.CurrentDirectory.TrimEnd(Path.DirectorySeparatorChar)))
@@ -101,6 +104,24 @@ namespace TS3Query
             Console.WriteLine("{0} plugins loaded and initialized.", this.Plugins.Count());
 
             #endregion
+
+            // This will enable us to receive all events
+            Client.QueryResponseReceived += (s, e) =>
+            {
+                switch (e.Response.Name.ToLower())
+                {
+                    case "selected":
+                        Client.ClientNotifyRegister(e.Response.Parameters["schandlerid"]);
+                        break;
+                    default:
+                        // Returned via "currentschandlerid" command
+                        if (e.Response.Name.StartsWith("schandlerid="))
+                        {
+                            Client.ClientNotifyRegister(e.Response.Name.Split('=').Last());
+                        }
+                        break;
+                }
+            };
 
             // Actual incoming data handler
             Client.QueryResponseReceived += (s, e) =>
