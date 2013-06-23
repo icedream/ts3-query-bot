@@ -8,7 +8,7 @@ using System.IO;
 namespace TS3Query.Plugins
 {
     [PluginMetadata("Sound plugin", "Icedream", Description="Allows playing sounds via the bot (via a virtual audio cable).")]
-    public class SoundPlugin
+    public class SoundPlugin : TS3QueryBotPlugin
     {
         Process p = null;
 
