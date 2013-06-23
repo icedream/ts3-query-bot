@@ -13,6 +13,9 @@ TestResults
 *.user
 *.sln.docstates
 
+# External dependencies
+src/dependencies/
+
 # Build results
 [Dd]ebug/
 [Rr]elease/
