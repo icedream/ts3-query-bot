@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Diagnostics;
+using System.ComponentModel;
+using System.ComponentModel.Composition;
 using System.IO;
 
 namespace TS3Query.Plugins
 {
+    [Export(typeof(TS3QueryBotPlugin))]
     [PluginMetadata("Sound plugin", "Icedream", Description="Allows playing sounds via the bot (via a virtual audio cable).")]
     public class SoundPlugin : TS3QueryBotPlugin
     {
