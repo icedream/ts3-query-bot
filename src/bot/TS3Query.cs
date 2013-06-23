@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace TS3Query
 {
-    public class TS3Query
+    public partial class TS3Query
     {
         /**
          * Properties
