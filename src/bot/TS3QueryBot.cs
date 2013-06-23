@@ -10,6 +10,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.IO;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace TS3Query
 {
@@ -211,7 +212,7 @@ namespace TS3Query
 
                                 // Invoke command
                                 Console.WriteLine("... ok! Invocation running.");
-                                command.MethodInfo.Invoke(plugin, parameters.ToArray());
+                                Task.Factory.StartNew(() => command.MethodInfo.Invoke(plugin, parameters.ToArray()));
 
                                 // Cancel further browsing
                                 success = true;
