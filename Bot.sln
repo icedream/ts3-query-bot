@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeamSpeak3 Client Query Bot", "ts3test\TeamSpeak3 Client Query Bot.csproj", "{F24346B1-66AE-4E40-BEC6-82D0D44862C2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot", "src\bot\Bot.csproj", "{F24346B1-66AE-4E40-BEC6-82D0D44862C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test Plugin", "TestPlugin\Test Plugin.csproj", "{6FA6A016-0FDB-4695-A48C-7F12B6D98BCC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlugin", "src\plugins\testplugin\TestPlugin.csproj", "{6FA6A016-0FDB-4695-A48C-7F12B6D98BCC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{A0EF23FB-AA51-4367-8970-462514FB68F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6FA6A016-0FDB-4695-A48C-7F12B6D98BCC} = {A0EF23FB-AA51-4367-8970-462514FB68F3}
 	EndGlobalSection
 EndGlobal

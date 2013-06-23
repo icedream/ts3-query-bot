@@ -44,9 +44,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ts3test\TeamSpeak3 Client Query Bot.csproj">
+    <ProjectReference Include="..\..\bot\Bot.csproj">
       <Project>{f24346b1-66ae-4e40-bec6-82d0d44862c2}</Project>
-      <Name>TeamSpeak3 Client Query Bot</Name>
+      <Name>Bot</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
