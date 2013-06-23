@@ -37,6 +37,7 @@ namespace TS3Query.Plugins
                     RedirectStandardOutput = false
                 }
             };
+            p.Start();
             p.WaitForExit();
         }
     }
