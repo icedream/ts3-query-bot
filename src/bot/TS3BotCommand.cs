@@ -41,6 +41,8 @@ namespace TS3Query
             if (!IsValidBotCommand(response))
                 throw new InvalidOperationException("This response does not contain a bot command.");
 
+            Response = response;
+
             TargetMode = (TS3MessageTargetMode)Convert.ToByte(response.Parameters["targetmode"]);
 
             Queue<string> args = new Queue<string>();

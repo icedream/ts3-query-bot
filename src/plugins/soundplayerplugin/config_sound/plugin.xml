@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+  <audio>
+    <type>aout_directx</type>
+    <device>Line 4 (TeamSpeak Out) (Virtual Audio Cable)</device>
+  </audio>
+</settings>

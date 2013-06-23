@@ -36,7 +36,6 @@ namespace TS3Query
         void Run()
         {
             #region Logging thingies
-            #if DEBUG
             Client.Connected += (s, e) =>
             {
                 Console.WriteLine("Query client connected.");
@@ -45,6 +44,7 @@ namespace TS3Query
             {
                 Console.WriteLine("Query client disconnected.");
             };
+            #if DEBUG
             Client.QueryRequestSent += (s, e) =>
             {
                 Console.WriteLine("Query request sent: {0}", e.Request.ToString());
@@ -60,7 +60,7 @@ namespace TS3Query
             var pCatalog = new AggregateCatalog();
             
             // Add current path for plugins
-            pCatalog.Catalogs.Add(new DirectoryCatalog(Environment.CurrentDirectory));
+            pCatalog.Catalogs.Add(new DirectoryCatalog(Path.Combine(Environment.CurrentDirectory, "plugins")));
 
             // The bot assembly itself
             pCatalog.Catalogs.Add(new AssemblyCatalog(Assembly.GetExecutingAssembly()));
@@ -69,7 +69,7 @@ namespace TS3Query
             var dc = Path.GetFullPath(Path.GetDirectoryName(Assembly.GetAssembly(GetType()).Location));
             if (dc.TrimEnd(Path.DirectorySeparatorChar) != Path.GetFullPath(Environment.CurrentDirectory.TrimEnd(Path.DirectorySeparatorChar)))
             {
-                pCatalog.Catalogs.Add(new DirectoryCatalog(dc));
+                pCatalog.Catalogs.Add(new DirectoryCatalog(Path.Combine(dc, "plugins")));
             }
 
             // Compose all parts (plugins) to this instance

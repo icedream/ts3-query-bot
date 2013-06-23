@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -19,6 +20,9 @@ namespace TS3Query
         internal TS3QueryBot _host = null;
         public TS3QueryBot Host { get { return _host; } }
 
+        protected string PluginFolderPath { get { return Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + Path.DirectorySeparatorChar, "plugins"); } }
+        protected string ConfigFolderPath { get { return Path.Combine(PluginFolderPath, "config_" + Path.GetFileNameWithoutExtension(Assembly.GetCallingAssembly().Location).Substring(7).ToLower()); } }
+        
         public virtual void HandleResponse(TS3QueryResponse response)
         {
             return;
