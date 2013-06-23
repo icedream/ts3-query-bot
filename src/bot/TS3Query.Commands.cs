@@ -90,7 +90,7 @@ namespace TS3Query
         /// </summary>
         public void ClientNotifyUnregister()
         {
-            Send(new TS3QueryRequest("clientnotifyunregister");
+            Send(new TS3QueryRequest("clientnotifyunregister"));
         }
 
         /// <summary>
