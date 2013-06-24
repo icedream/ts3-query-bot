@@ -22,7 +22,7 @@ namespace TS3Query.Plugins
         [PluginCommand("help", TargetMode = TS3MessageTargetMode.Private, Description = "Provides general help.")]
         public void Private_Help(TS3QueryResponse response, [PluginCommandParameter("plugin or command", Description="Provides help for a plugin or a command")] string pluginOrCommand)
         {
-            if (Host.Plugins.Any(p => p.Metadata.Name.Equals(pluginOrCommand) || p.GetType().Name.Equals(pluginOrCommand)))
+            if (Host.Plugins.Any(p => p.Metadata.Name.Equals(pluginOrCommand) || p.GetType().Name.Equals(pluginOrCommand, StringComparison.OrdinalIgnoreCase)))
                 Private_Help_Plugin(response, pluginOrCommand);
             else
                 Private_Help_Command(response, pluginOrCommand);
@@ -38,6 +38,7 @@ namespace TS3Query.Plugins
 
         private void Private_Help_Command(TS3QueryResponse response, string command)
         {
+
             string invokerID = response.Parameters["invokerid"];
 
             List<TS3QueryBotPluginMethod> methods = new List<TS3QueryBotPluginMethod>();
