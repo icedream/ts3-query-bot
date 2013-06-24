@@ -67,7 +67,7 @@ namespace TS3Query
                             var c = 1; // Start searching right after our token
                             do
                             {
-                                c = a.IndexOf(b, c); // Same token is where again?
+                                c = a.IndexOf(b, c + 1); // Same token is where again?
                                 Console.WriteLine("Same token is in {0}", c);
                                 if (c < 0)
                                     throw new ArgumentException("Invalid syntax.");
