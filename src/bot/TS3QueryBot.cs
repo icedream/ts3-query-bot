@@ -212,7 +212,7 @@ namespace TS3Query
 
                                 // Invoke command
                                 Console.WriteLine("... ok! Invocation running.");
-                                Task.Factory.StartNew(() => command.MethodInfo.Invoke(plugin, parameters.ToArray()));
+                                command.MethodInfo.Invoke(plugin, parameters.ToArray());
 
                                 // Cancel further browsing
                                 success = true;

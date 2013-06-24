@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bot", "src\bot\Bot.csproj", "{F24346B1-66AE-4E40-BEC6-82D0D44862C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestPlugin", "src\plugins\testplugin\TestPlugin.csproj", "{6FA6A016-0FDB-4695-A48C-7F12B6D98BCC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test Plugin", "src\plugins\testplugin\Test Plugin.csproj", "{6FA6A016-0FDB-4695-A48C-7F12B6D98BCC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{A0EF23FB-AA51-4367-8970-462514FB68F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sound Plugin", "src\plugins\soundplayerplugin\Sound Plugin.csproj", "{593EE7B0-F10D-43D3-83C9-E8012BF68EAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Welcome Plugin", "src\plugins\welcomeplugin\Welcome Plugin.csproj", "{05492A16-6DC5-434B-9C6B-CED4AB7294CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +51,16 @@ Global
 		{593EE7B0-F10D-43D3-83C9-E8012BF68EAC}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{593EE7B0-F10D-43D3-83C9-E8012BF68EAC}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{593EE7B0-F10D-43D3-83C9-E8012BF68EAC}.Release|x86.ActiveCfg = Release|Any CPU
+		{05492A16-6DC5-434B-9C6B-CED4AB7294CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05492A16-6DC5-434B-9C6B-CED4AB7294CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05492A16-6DC5-434B-9C6B-CED4AB7294CA}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{05492A16-6DC5-434B-9C6B-CED4AB7294CA}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{05492A16-6DC5-434B-9C6B-CED4AB7294CA}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{05492A16-6DC5-434B-9C6B-CED4AB7294CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05492A16-6DC5-434B-9C6B-CED4AB7294CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05492A16-6DC5-434B-9C6B-CED4AB7294CA}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{05492A16-6DC5-434B-9C6B-CED4AB7294CA}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{05492A16-6DC5-434B-9C6B-CED4AB7294CA}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,5 +68,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{6FA6A016-0FDB-4695-A48C-7F12B6D98BCC} = {A0EF23FB-AA51-4367-8970-462514FB68F3}
 		{593EE7B0-F10D-43D3-83C9-E8012BF68EAC} = {A0EF23FB-AA51-4367-8970-462514FB68F3}
+		{05492A16-6DC5-434B-9C6B-CED4AB7294CA} = {A0EF23FB-AA51-4367-8970-462514FB68F3}
 	EndGlobalSection
 EndGlobal

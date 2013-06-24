@@ -3,5 +3,6 @@
   <audio>
     <type>aout_directx</type>
     <device>Line 4 (TeamSpeak Out) (Virtual Audio Cable)</device>
+    <volume>64</volume>
   </audio>
 </settings>

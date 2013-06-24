@@ -33,7 +33,7 @@ namespace TS3Query.Plugins
             string invokerID = response.Parameters["invokerid"];
             var plugin = Host.Plugins.First(p => p.Metadata.Name.Equals(pluginName) || p.GetType().Name.Equals(pluginName, StringComparison.OrdinalIgnoreCase));
 
-            Client.SendTextMessage(invokerID, string.Format("Commands for plugin [B]{0}[/B] by {1}, Version {2}:\n\t{3}", plugin.Metadata.Name, plugin.Metadata.Author, plugin.Metadata.Version, string.Join(", ", plugin.Commands.Select(cmd => cmd.Metadata.Name).Distinct())));
+            Client.SendTextMessage(invokerID, string.Format("Commands for plugin [B]{0}[/B] by {1}, Version {2}:\n\t{3}", plugin.Metadata.Name, plugin.Metadata.Author, plugin.Metadata.Version, plugin.Commands.Any() ? string.Join(", ", plugin.Commands.Select(cmd => cmd.Metadata.Name).Distinct()) : "[I]none[/I]"));
         }
 
         private void Private_Help_Command(TS3QueryResponse response, string command)
@@ -108,11 +108,16 @@ namespace TS3Query.Plugins
             Client.SendTextMessage(invokerID, method.Metadata.Description);
             Client.SendTextMessage(invokerID, GenerateSyntax(method));
             var sb = new StringBuilder();
-            sb.Append("Parameters:");
-            foreach (var parameter in method.Parameters.Where(p => p.ParameterInfo.GetCustomAttributes(typeof(PluginCommandParameterAttribute), false).Any()))
+            var parameters = method.Parameters.Where(p => p.ParameterInfo.GetCustomAttributes(typeof(PluginCommandParameterAttribute), false).Any());
+            if (parameters.Any())
             {
-                sb.AppendFormat("\n\t{2} [B]{0}[/B]\t[I]{1}[/I]", parameter.Metadata.Name, parameter.Metadata.Description, method.Metadata.Deprecated ? "[I][deprecated][/I] " : "");
+                sb.Append("Parameters:");
+                foreach (var parameter in parameters)
+                {
+                    sb.AppendFormat("\n\t{2} [B]{0}[/B]\t[I]{1}[/I]", parameter.Metadata.Name, parameter.Metadata.Description, method.Metadata.Deprecated ? "[I][deprecated][/I] " : "");
+                }
             }
+            else sb.Append("Parameters: [I]none[/I]");
             Client.SendTextMessage(invokerID, sb.ToString());
         }
     }

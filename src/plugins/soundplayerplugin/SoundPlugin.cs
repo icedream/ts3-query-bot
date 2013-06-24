@@ -7,6 +7,8 @@ using System.ComponentModel;
 using System.ComponentModel.Composition;
 using System.IO;
 using System.Xml;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace TS3Query.Plugins
 {
@@ -18,8 +20,12 @@ namespace TS3Query.Plugins
         XmlDocument sounds = new XmlDocument();
         XmlDocument config = new XmlDocument();
 
+        public bool IsBusy { get; private set; }
+
         public SoundPlugin()
         {
+            IsBusy = false;
+
             config.Load(Path.Combine(ConfigFolderPath, "plugin.xml"));
 
             sounds.Load(Path.Combine(ConfigFolderPath, "sounds.xml"));
@@ -42,6 +48,7 @@ namespace TS3Query.Plugins
                 if (p == null)
                     return;
                 else p.Kill();
+                IsBusy = false;
             }
             catch { { } }
         }
@@ -61,6 +68,8 @@ namespace TS3Query.Plugins
             aliasOrURL = aliasOrURL.Replace("[URL]", "").Replace("[/URL]", "");
             Console.WriteLine(aliasOrURL);
 
+            XmlNode soundNode = null;
+
             if (!Uri.IsWellFormedUriString(aliasOrURL, UriKind.Absolute))
             {
                 // Expect this to be a sound alias
@@ -71,26 +80,30 @@ namespace TS3Query.Plugins
                 }
 
                 // get the sound
-                var soundNode = sounds.SelectSingleNode("/sounds/sound[@id='" + aliasOrURL + "']");
+                soundNode = sounds.SelectSingleNode("/sounds/sound[@id='" + aliasOrURL + "']");
 
                 aliasOrURL = soundNode.InnerText;
             }
 
-            p = new Process()
+            Task.Factory.StartNew(() =>
             {
-                StartInfo = new ProcessStartInfo()
+                IsBusy = true;
+                p = new Process()
                 {
-                    FileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "VideoLAN", "VLC", "vlc.exe"),
-                    // TODO: Implement other audio device types
-                    Arguments = string.Format("-I qt --no-video-on-top --no-video --play-and-stop --play-and-exit --aout=\"{2}\" --directx-audio-device=\"{1}\" \"{0}\"", aliasOrURL, config.SelectSingleNode("/settings/audio/device").InnerText, config.SelectSingleNode("/settings/audio/type").InnerText),
-                    UseShellExecute = false,
-                    RedirectStandardError = false,
-                    RedirectStandardInput = false,
-                    RedirectStandardOutput = false
-                }
-            };
-            p.Start();
-            p.WaitForExit();
+                    StartInfo = new ProcessStartInfo()
+                    {
+                        FileName = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), "VideoLAN", "VLC", "vlc.exe"),
+                        // TODO: Implement other audio device types
+                        Arguments = string.Format("-I qt --volume=" + (
+                            soundNode != null && soundNode.Attributes["volume"] != null ? soundNode.Attributes["volume"].Value : config.SelectSingleNode("/settings/audio/volume").InnerText
+                        ) + " --no-video-on-top --no-video --play-and-stop --play-and-exit --aout=\"{2}\" --directx-audio-device=\"{1}\" \"{0}\"", aliasOrURL, config.SelectSingleNode("/settings/audio/device").InnerText, config.SelectSingleNode("/settings/audio/type").InnerText),
+                        UseShellExecute = true
+                    }
+                };
+                p.Start();
+                p.WaitForExit();
+                IsBusy = false;
+            });
         }
     }
 }
