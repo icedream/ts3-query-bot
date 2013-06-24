@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+  <channelid>495<!--Lobby--></channelid>
+  <sound>welcome.sound</sound>
+  <delay>00:00:30</delay>
+</settings>
