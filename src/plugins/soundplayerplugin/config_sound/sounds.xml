@@ -3,7 +3,6 @@
   <sound id="penis" volume="128">C:\Server\dekart811\Sounds\penis.mp3</sound>
   <sound id="arschfick" volume="128">C:\Server\dekart811\Sounds\arschfick.mp3</sound>
   <sound id="heil" volume="128">C:\Server\dekart811\Sounds\totalerkrieg.mp3</sound>
-  <sound id="horse" volume="96">http://www.youtube.com/watch?v=tXtYyTaaJ1M</sound>
   <sound id="chill" volume="128">C:\Server\dekart811\Sounds\chill.mp3</sound>
   <sound id="bird" volume="128">C:\Server\dekart811\Sounds\bird.mp3</sound>
   <sound id="behindert" volume="128">C:\Server\dekart811\Sounds\behindert.mp3</sound>
@@ -15,6 +14,23 @@
   <sound id="dunkel" volume="128">C:\Server\dekart811\Sounds\dunkel.wav</sound>
   <sound id="blitz" volume="128">C:\Server\dekart811\Sounds\blitz.mp3</sound>
   <sound id="geh" volume="128">C:\Server\dekart811\Sounds\gehwoduwohnst.wav</sound>
-
-  <sound id="welcome_sound" volume="80">C:\Server\dekart811\Sounds\welcome_sound.wav</sound>
+  
+  <sound id="horse" volume="96">http://www.youtube.com/watch?v=tXtYyTaaJ1M</sound>
+  
+  <!-- lol tv total -->
+  <sound id="lache" volume="128">http://www.youtube.com/watch?v=L0VKvYVD8K8</sound>
+  <sound id="defiti" volume="128">http://www.youtube.com/watch?v=y_PwhB0Yq5A</sound>
+  <sound id="denitiv" volume="128">http://www.youtube.com/watch?v=GsljkYLmjLc</sound>
+  <sound id="was" volume="128">http://www.youtube.com/watch?v=YVk2dKuwcAM</sound>
+  
+  <!-- radio -->
+  <sound id="radio.ssl">http://85.239.108.1/sunshinelive-mp3-192</sound>
+  <sound id="radio.ahfm">http://ah.fm/96k.m3u</sound>
+  <sound id="radio.entrancedexperience">http://66.85.129.140:6800/stream/1/</sound>
+  <sound id="radio.rautemain">http://main-aacp.rautemusik.fm/listen.pls</sound>
+  <sound id="radio.rautehouse">http://house-aacp.rautemusik.fm/listen.pls</sound>
+  <sound id="radio.rauteclub">http://club-aacp.rautemusik.fm/listen.pls</sound>
+  <sound id="radio.rautetrance">http://trance-aacp.rautemusik.fm/listen.pls</sound>
+  
+  <sound id="welcome.sound" volume="80">C:\Server\dekart811\Sounds\welcome_sound.wav</sound>
 </sounds>
