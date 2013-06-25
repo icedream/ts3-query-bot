@@ -72,7 +72,7 @@ namespace TS3Query
                                 if (c < 0)
                                     throw new ArgumentException("Invalid syntax.");
                             } while (a.Substring(c - 1, 1) == @"\"); // "\" escapes token, therefore ignore that
-                            var d = a.Substring(1, c - 1); // <token>[...content...]<token>
+                            var d = a.Substring(1, c - 1).Replace("\\" + b, b.ToString()); // <token>[...content...]<token>
                             args.Enqueue(d);
                             a = a.Substring(c + 1);
                         } break;
@@ -81,13 +81,13 @@ namespace TS3Query
                             var c = 0; // Start searching at the beginning
                             do
                             {
-                                c = a.IndexOfAny(new[] { ' ', '\r', '\n', '\t' }, c); // Same token is where again?
+                                c = a.IndexOfAny(new[] { ' ', '\r', '\n', '\t' }, c + 1); // Same token is where again?
                                 if (c < 0)
                                     c = a.Length; // End of string
                             } while (
                                 c > 0 // prevent searching before beginning
                                 && a.Substring(c - 1, 1) == @"\"); // "\ " not to be seen as same token
-                            var d = a.Substring(0, c); // [...content...]<token>
+                            var d = a.Substring(0, c).Replace("\\ ", " ").Replace("\\\r", "\r").Replace("\\\n", "\n").Replace("\\\t ", "\t"); // [...content...]<token>
                             args.Enqueue(d);
                             a = a.Substring(c);
                         } break;
