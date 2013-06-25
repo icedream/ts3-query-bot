@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InternalPlugins\HelpPlugin.cs" />
+    <Compile Include="Permissions.cs" />
     <Compile Include="TS3Query.Commands.cs" />
     <Compile Include="TS3QueryBot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="TS3QueryResponse.cs" />
     <Compile Include="TS3Query.cs" />
     <Compile Include="TS3QueryTextFilter.cs" />
+    <Compile Include="TS3ReturnValues.cs" />
     <Compile Include="TS3TokenType.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
