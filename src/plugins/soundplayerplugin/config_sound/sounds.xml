@@ -13,16 +13,56 @@
   <sound id="barcadirum" volume="128">C:\Server\dekart811\Sounds\barcadirum.mp3</sound>
   <sound id="dunkel" volume="128">C:\Server\dekart811\Sounds\dunkel.wav</sound>
   <sound id="blitz" volume="128">C:\Server\dekart811\Sounds\blitz.mp3</sound>
-  <sound id="geh" volume="128">C:\Server\dekart811\Sounds\gehwoduwohnst.wav</sound>
-  
+  <sound id="geh" volume="160">C:\Server\dekart811\Sounds\gehwoduwohnst.wav</sound>
+  <sound id="magic" volume="192">C:\Server\dekart811\Sounds\magic.mp3</sound>
+  <sound id="bye" volume="128">C:\Server\dekart811\Sounds\bye.mp3</sound>
+
+  <!-- sesamstraße yipyipyip -->
+  <sound id="startup1" volume="192">C:\Server\dekart811\Sounds\sesam\startup1.wav</sound>
+  <sound id="startup2" volume="192">C:\Server\dekart811\Sounds\sesam\startup2.wav</sound>
+  <sound id="ooh1" volume="192">C:\Server\dekart811\Sounds\sesam\ooh1.wav</sound>
+  <sound id="ooh2" volume="192">C:\Server\dekart811\Sounds\sesam\ooh2.wav</sound>
+  <sound id="lookbook1" volume="192">C:\Server\dekart811\Sounds\sesam\lookbook1.wav</sound>
+  <sound id="lookbook2" volume="192">C:\Server\dekart811\Sounds\sesam\lookbook2.wav</sound>
+  <sound id="button1" volume="192">C:\Server\dekart811\Sounds\sesam\button1.wav</sound>
+  <sound id="button2" volume="192">C:\Server\dekart811\Sounds\sesam\button2.wav</sound>
+  <sound id="computer" volume="192">C:\Server\dekart811\Sounds\sesam\computer.wav</sound>
+
+  <!-- amazing horse (1hour) -->
   <sound id="horse" volume="96">http://www.youtube.com/watch?v=tXtYyTaaJ1M</sound>
-  
+
+  <!-- full metal jacket, suggested by Schlumpf -->
+  <sound id="bullshit" volume="128">C:\Server\dekart811\Sounds\fmj\bullshit_luft.mp3</sound>
+  <sound id="arschfick_fmj" volume="128">C:\Server\dekart811\Sounds\fmj\fick_in_den_arsch.mp3</sound>
+  <sound id="hals" volume="128">C:\Server\dekart811\Sounds\fmj\in_den_hals.mp3</sound>
+  <sound id="schädel" volume="128">C:\Server\dekart811\Sounds\fmj\in_den_schaedel.mp3</sound>
+  <sound id="kunstwerk" volume="200">C:\Server\dekart811\Sounds\fmj\kunstwerk.wav</sound>
+  <sound id="liste" volume="200">C:\Server\dekart811\Sounds\fmj\liste.wav</sound>
+  <sound id="name" volume="200">C:\Server\dekart811\Sounds\fmj\name.wav</sound>
+  <sound id="paula" volume="200">C:\Server\dekart811\Sounds\fmj\paula.wav</sound>
+  <sound id="stapel" volume="200">C:\Server\dekart811\Sounds\fmj\scheißstapel.wav</sound>
+  <sound id="schwester" volume="200">C:\Server\dekart811\Sounds\fmj\schwester.wav</sound>
+  <sound id="nuss" volume="128">C:\Server\dekart811\Sounds\fmj\sie_dumme_nuss.mp3</sound>
+  <sound id="todesurteil" volume="200">C:\Server\dekart811\Sounds\fmj\todesurteil.wav</sound>
+
+
   <!-- lol tv total -->
   <sound id="lache" volume="128">http://www.youtube.com/watch?v=L0VKvYVD8K8</sound>
   <sound id="defiti" volume="128">http://www.youtube.com/watch?v=y_PwhB0Yq5A</sound>
   <sound id="denitiv" volume="128">http://www.youtube.com/watch?v=GsljkYLmjLc</sound>
   <sound id="was" volume="128">http://www.youtube.com/watch?v=YVk2dKuwcAM</sound>
-  
+  <sound id="kakamachen" volume="128">https://www.youtube.com/watch?v=eU5X79PUVBY</sound>
+  <sound id="einfachzukalt" volume="128">https://www.youtube.com/watch?v=88vB5y--YUE</sound>
+  <sound id="problem" volume="128">https://www.youtube.com/watch?v=iMjp0i4l6wE</sound>
+  <sound id="kalt" volume="128">https://www.youtube.com/watch?v=9eZ38G418lU</sound>
+  <sound id="ansage" volume="128">https://www.youtube.com/watch?v=cZdJdOTvGi0</sound>
+  <sound id="countryboy" volume="128">https://www.youtube.com/watch?v=tzP_UTDZ0Xg</sound>
+  <sound id="wiedersehen" volume="128">https://www.youtube.com/watch?v=dUL66e3z7fE</sound>
+  <sound id="knopf" volume="128">https://www.youtube.com/watch?v=A1KsaKwjeN8</sound>
+  <sound id="kommtvonalleine" volume="128">https://www.youtube.com/watch?v=2lg753moJU8</sound>
+  <sound id="ichweißesnicht" volume="128">https://www.youtube.com/watch?v=yivEJhBUyRI</sound>
+  <sound id="gerät" volume="130">https://www.youtube.com/watch?v=kIJC-JXJVyU</sound>
+
   <!-- radio -->
   <sound id="radio.ssl">http://85.239.108.1/sunshinelive-mp3-192</sound>
   <sound id="radio.ahfm">http://ah.fm/96k.m3u</sound>
@@ -31,6 +71,8 @@
   <sound id="radio.rautehouse">http://house-aacp.rautemusik.fm/listen.pls</sound>
   <sound id="radio.rauteclub">http://club-aacp.rautemusik.fm/listen.pls</sound>
   <sound id="radio.rautetrance">http://trance-aacp.rautemusik.fm/listen.pls</sound>
-  
+  <sound id="radio.housetime">http://mp3.ht-stream.net/listen.pls</sound>
+  <sound id="radio.bbc1">http://bbcmedia.ic.llnwd.net/stream/bbcmedia_intl_lc_radio1_p</sound>
+
   <sound id="welcome.sound" volume="80">C:\Server\dekart811\Sounds\welcome_sound.wav</sound>
 </sounds>
